@@ -16,6 +16,24 @@ function findGame() {
       .then(game => game.gamePath);
 }
 
+let tools = [
+  {
+    id: 'nvidiaProfileInspector',
+    name: 'Darkmod inspector',
+    executable: () => 'nvidiaProfileInspector.exe',
+    requiredFiles: [
+      'nvidiaProfileInspector.exe',
+    ],
+  },
+  {
+    id: 'WOCS.Patcher.Scar.PathFinding fix',
+    name: 'OCS.Patcher.Scar.PathFinding fix',
+    executable: () => 'OCS.Patcher.Scar.PathFinding.exe',
+    requiredFiles: [
+      'OCS.Patcher.Scar.PathFinding.exe',
+    ],
+  },
+];
 function prepareForModding(discovery) {
   return fs.ensureDirWritableAsync(path.join(discovery.path, 'mods'),
     () => Promise.resolve());
